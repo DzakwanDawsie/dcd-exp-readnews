@@ -1,13 +1,14 @@
 version: 2.1
-
+ 
 orbs:
-  android: circleci/android@0.2.1
-
+  android: circleci/android@3.0.2
+ 
 jobs:
   build:
-    executor: android/android
-    docker:
-      - image: circleci/android:api-31-node17
+    executor:
+      name: android/android_machine
+      resource_class: large
+      tag: default
     steps:
       - checkout
       - restore_cache:
@@ -26,7 +27,7 @@ jobs:
       - run:
           name: Run Build
           command: ./gradlew build
-      - store_artifacts:
+      - store_artifacts: 
           path: app/build/reports
           destination: reports
       - run:
@@ -34,6 +35,11 @@ jobs:
           command: ./gradlew lint test
       - store_test_results:
           path: app/build/test-results
-      - store_artifacts:
+      - store_artifacts:  
           path: app/build/outputs/apk/debug/
           destination: artifact-file
+
+workflows:
+  build:
+    jobs:
+      - build
