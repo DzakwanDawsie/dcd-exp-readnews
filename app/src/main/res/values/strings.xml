@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">ReadNews</string>
+    <string name="navigation_home_name">Home</string>
+    <string name="navigation_favorite_name">Favorite</string>
+    <string name="tv_title_home">Home</string>
+    <string name="sb_hint_home">Search news</string>
+    <string name="iv_cd_news">News Cover</string>
+    <string name="tv_title_news_default">News Title</string>
+    <string name="tv_description_news_default">News Description</string>
+    <string name="tv_title_article_default">News Name</string>
+    <string name="tv_description_article_default">Lorem ipsum dolor sit amet belalang kupu-kupu, siang makan nasi kalau malam minum susu..</string>
+    <string name="tv_loading">Please waiting…</string>
+    <string name="tv_owner_article_default">Dicoding</string>
+    <string name="tv_time_article_default">October 06 2024, at 8:00AM</string>
+    <string name="tv_detail_title_article">Detail Article</string>
+    <string name="fab_btn_favorite">FAB Favorite</string>
+    <string name="btn_open_link">Open Link</string>
+    <string name="iv_cd_article">Article Cover</string>
+    <string name="tv_title_favorite">Favorite News</string>
+    <string name="title_favorite">Favorite</string>
+    <string name="tv_article_empty">Article is empty</string>
+    <string name="power_connected">Power connected!</string>
+    <string name="power_disconnected">Power disconnected!</string>
+</resources>
