@@ -5,14 +5,23 @@ orbs:
 
 jobs:
   build:
-    executor: android/android
+    executor:
+      name: android/android
+      resource-class: large
+      environment:
+        _JAVA_OPTIONS: "-Xms512m -Xmx1024m"
+    docker:
+      - image: circleci/android:api-31-node17
     steps:
       - checkout
       - restore_cache:
           key: android-orb-v1-
       - run:
+          name: Set Java Version
+          command: sudo update-java-alternatives -s java-1.17.0-openjdk-amd64
+      - run:
           name: Chmod permissions
-          command: sudo chmod +x ./gradlew
+          command: chmod +x ./gradlew
       - run:
           name: Download Dependencies
           command: ./gradlew androidDependencies
